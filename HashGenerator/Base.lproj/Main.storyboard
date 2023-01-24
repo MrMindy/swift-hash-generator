@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sa7-92-DEW">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="sfV-70-jVR">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="sa7-92-DEW" customClass="HomeViewController" customModule="HashGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NGu-gN-5mi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hash  Generator" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0A-zM-K7o">
+                                <rect key="frame" x="55" y="134" width="283" height="131.33333333333337"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="55"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="5XM-eB-Drs">
+                                <rect key="frame" x="35" y="310.33333333333331" width="323" height="41"/>
+                                <color key="backgroundColor" red="0.098039209840000002" green="0.15294116739999999" blue="0.35686278339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ex0-mv-xki"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="SHA-256"/>
+                                    <segment title="MD5"/>
+                                    <segment title="SHA-1"/>
+                                </segments>
+                                <color key="tintColor" systemColor="systemFillColor"/>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plJ-JC-AkG">
+                                <rect key="frame" x="35" y="375.33333333333331" width="323" height="199.99999999999994"/>
+                                <color key="backgroundColor" red="0.098039209840000002" green="0.15294116739999999" blue="0.35686278339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DbB-s5-DpJ"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSk-ZF-Gp2">
+                                <rect key="frame" x="35" y="620.33333333333337" width="323" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T5G-iZ-pqd"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Generate">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nFw-pe-bJI"/>
+                        <color key="backgroundColor" red="0.02745098248" green="0.062745101750000004" blue="0.1725490093" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5XM-eB-Drs" firstAttribute="centerX" secondItem="NGu-gN-5mi" secondAttribute="centerX" id="8RM-Cy-kEx"/>
+                            <constraint firstItem="c0A-zM-K7o" firstAttribute="leading" secondItem="nFw-pe-bJI" secondAttribute="leading" constant="55" id="BhS-dk-BxV"/>
+                            <constraint firstItem="dSk-ZF-Gp2" firstAttribute="leading" secondItem="nFw-pe-bJI" secondAttribute="leading" constant="35" id="Duq-vB-Mi8"/>
+                            <constraint firstItem="plJ-JC-AkG" firstAttribute="leading" secondItem="nFw-pe-bJI" secondAttribute="leading" constant="35" id="Khn-mp-UZ6"/>
+                            <constraint firstItem="nFw-pe-bJI" firstAttribute="trailing" secondItem="plJ-JC-AkG" secondAttribute="trailing" constant="35" id="RxN-mm-IVD"/>
+                            <constraint firstItem="nFw-pe-bJI" firstAttribute="trailing" secondItem="c0A-zM-K7o" secondAttribute="trailing" constant="55" id="TQf-RP-THm"/>
+                            <constraint firstItem="nFw-pe-bJI" firstAttribute="trailing" secondItem="5XM-eB-Drs" secondAttribute="trailing" constant="35" id="VHG-c6-7Kl"/>
+                            <constraint firstItem="dSk-ZF-Gp2" firstAttribute="top" secondItem="plJ-JC-AkG" secondAttribute="bottom" constant="45" id="YGS-Yw-K3f"/>
+                            <constraint firstItem="dSk-ZF-Gp2" firstAttribute="centerX" secondItem="NGu-gN-5mi" secondAttribute="centerX" id="dBE-ha-glx"/>
+                            <constraint firstItem="plJ-JC-AkG" firstAttribute="centerX" secondItem="NGu-gN-5mi" secondAttribute="centerX" id="hi3-Xz-M4g"/>
+                            <constraint firstItem="plJ-JC-AkG" firstAttribute="top" secondItem="5XM-eB-Drs" secondAttribute="bottom" constant="25" id="oUq-gT-s30"/>
+                            <constraint firstItem="nFw-pe-bJI" firstAttribute="trailing" secondItem="dSk-ZF-Gp2" secondAttribute="trailing" constant="35" id="poB-dC-43U"/>
+                            <constraint firstItem="5XM-eB-Drs" firstAttribute="leading" secondItem="nFw-pe-bJI" secondAttribute="leading" constant="35" id="teJ-sv-hHn"/>
+                            <constraint firstItem="5XM-eB-Drs" firstAttribute="top" secondItem="c0A-zM-K7o" secondAttribute="bottom" constant="45" id="ue1-kv-osf"/>
+                            <constraint firstItem="c0A-zM-K7o" firstAttribute="top" secondItem="nFw-pe-bJI" secondAttribute="top" constant="75" id="vBH-61-Boc"/>
+                            <constraint firstItem="c0A-zM-K7o" firstAttribute="centerX" secondItem="NGu-gN-5mi" secondAttribute="centerX" id="vvE-0E-6m2"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cmn-Q8-h7J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="101.53846153846153" y="-97.393364928909946"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
