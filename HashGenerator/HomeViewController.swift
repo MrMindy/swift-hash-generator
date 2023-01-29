@@ -14,11 +14,15 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var hashCodeSegmentedControl: UISegmentedControl!
     @IBOutlet var inputTextView: UITextView!
-    @IBOutlet var confirmView: UIView!
+    
+    @IBOutlet var warningView: UIView!
+    
+    var timer: Timer!
+    var interval: CGFloat = 3;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        confirmView.isHidden = true;
+        warningView.isHidden = true;
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,6 +31,12 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func generateButtonTouch(_ sender: UIButton) {
+        
+        if inputTextView.text.isEmpty {
+            warningView.isHidden = false;
+            hideWarningViewTimer();
+            return;
+        }
         
         var crypto = "";
         
@@ -47,6 +57,16 @@ class HomeViewController: UIViewController {
         
         
         performSegue(withIdentifier: "toResult", sender: crypto);
+    }
+    
+    func hideWarningViewTimer() {
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(hideWarningView), userInfo: nil, repeats: true);
+    
+    }
+    
+    @objc func hideWarningView() {
+        warningView.isHidden = true;
+        timer.invalidate();
     }
     
     @IBAction func clearButtonTouch(_ sender: UIButton) {
