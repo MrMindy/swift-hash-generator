@@ -13,7 +13,7 @@ An App that based upon some algorithm selected by the user, generates the hash c
 <p float="left">
   <img src="hash_generator_home.png" alt="exemplo imagem" style="width:300px">
   <img src="hash_generator_result.png" alt="exemplo imagem" style="width:300px">
-  <img src="hash_generator_copied_message.png" alt="exemplo imagem" style="width:300px">
+  <img src="hash_generator_copied_toast.png" alt="exemplo imagem" style="width:300px">
   <img src="hash_generator_error_message.png" alt="exemplo imagem" style="width:300px">
 </p>
 
