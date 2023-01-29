@@ -32,31 +32,33 @@ class HomeViewController: UIViewController {
     
     @IBAction func generateButtonTouch(_ sender: UIButton) {
         
-        if inputTextView.text.isEmpty {
+        if !inputTextView.text.isEmpty {
+            
+            var crypto = "";
+            
+            switch hashCodeSegmentedControl.titleForSegment(at: hashCodeSegmentedControl.selectedSegmentIndex) {
+                case "SHA256":
+                    crypto = inputTextView.text.cryptoSHA256;
+                    break;
+                case "MD5":
+                    crypto = inputTextView.text.cryptoMD5;
+                    break;
+                case "SHA512":
+                    crypto = inputTextView.text.cryptoSHA512;
+                    break;
+                default:
+                    crypto = inputTextView.text.cryptoSHA256;
+                    break;
+            }
+            
+            
+            performSegue(withIdentifier: "toResult", sender: crypto);
+        } else {
             warningView.isHidden = false;
             hideWarningViewTimer();
-            return;
-        }
-        
-        var crypto = "";
-        
-        switch hashCodeSegmentedControl.titleForSegment(at: hashCodeSegmentedControl.selectedSegmentIndex) {
-            case "SHA256":
-                crypto = inputTextView.text.cryptoSHA256;
-                break;
-            case "MD5":
-                crypto = inputTextView.text.cryptoMD5;
-                break;
-            case "SHA512":
-                crypto = inputTextView.text.cryptoSHA512;
-                break;
-            default:
-                crypto = inputTextView.text.cryptoSHA256;
-                break;
         }
         
         
-        performSegue(withIdentifier: "toResult", sender: crypto);
     }
     
     func hideWarningViewTimer() {
