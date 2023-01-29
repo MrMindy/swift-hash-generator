@@ -8,7 +8,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    //TODO: Configure Confirm Screen and Copy the result code to Clipboard with toast message.
+    //TODO: Prevent user to generate hash with empty text
+    
     @IBOutlet var hashCodeSegmentedControl: UISegmentedControl!
     @IBOutlet var inputTextView: UITextView!
     @IBOutlet var confirmView: UIView!

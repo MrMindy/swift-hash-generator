@@ -12,10 +12,18 @@ class ResultViewController: UIViewController {
     var hashCode: String?
     
     @IBOutlet var hashCodeLabel: UILabel!
+    @IBOutlet var toastView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hashCodeLabel.text = slice();
+        toastView.isHidden = true;
+    }
+    
+    @IBAction func copyButtonTouch(_ sender: UIButton) {
+        UIPasteboard.general.string = hashCodeLabel.text?.trimmingCharacters(in: .whitespacesAndNewlines);
+        
+        toastView.isHidden = false;
     }
     
     func slice() -> String {
